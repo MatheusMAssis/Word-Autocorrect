@@ -27,11 +27,7 @@ def autocorrect(string, keyboard):
                         if string[i] != word[i]:
                             if keyboard_dist(keyboard, string[i], word[i]) < 2:
                                 ans.append(word)
-                else:                                   #--- if they have different lenghts, it is expected to be a recommendation ---#
-                    #if len(string) < len(word):
-                     #   for i in range(len(word)):
-                     #       ...
-                    #else:
+                else:
                     ans.append(word)
                     
     return ans, t.time() - start
