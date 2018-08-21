@@ -1,25 +1,16 @@
-#--- Distance of a point to all others in a matrix ---#
-
-def matrix_distance(matrix, initial):
-    ...
-
 #--- Distance of letters in Keyboard ---#
     
 
 qwerty = [['q','w','e','r','t','y','u','i','o','p'],
           ['a','s','d','f','g','h','j','k','l','ç'],
-          ['z','x','c','v','b','n','m',None,None,None]]
+          ['z','x','c','v','b','n','m']]
 
-def keyboard_dist(keyboard):
+def keyboard_dist(keyboard, letter1, letter2):
     
-    ans = {}
-    
-    for line in keyboard:
-        for letter in line:
-            if letter != None:
-                ans[letter] = {}
+    for i in range(len(keyboard)):
+        if letter1 in keyboard[i]:
+            i1, j1 = i, keyboard[i].index(letter1)    #--- coordinates of letter1 ---#
+        if letter2 in keyboard[i]:
+            i2, j2 = i, keyboard[i].index(letter2)    #--- coordinates of letter2 ---#
             
-    #find distance between letters
-    #append into ans
-    
-    return ans
+    return abs(i2 - i1) + abs(j2 - j1)
