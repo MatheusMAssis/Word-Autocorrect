@@ -1,12 +1,12 @@
-#--- Word Recommendation using Levenshtein Distance ---#
+#--- Word Autocorrection using Levenshtein Distance ---#
 
 
-def recommendation(string, keyboard):
+def autocorrect(string, keyboard):
     start = t.time()
     
     #--- reading txt common_words_usa.txt (with 10000 words) ---#
     
-    file = "common_words_usa.txt"
+    file = "common_words_usa2.txt"
     f = open(file)
     data = f.readlines()
     f.close()
@@ -25,6 +25,10 @@ def recommendation(string, keyboard):
                             if keyboard_dist(keyboard, string[i], word[i]) < 2:
                                 ans.append(word)
                 else:                                   #--- if they have different lenghts, it is expected to be a recommendation ---#
+                    #if len(string) < len(word):
+                     #   for i in range(len(word)):
+                     #       ...
+                    #else:
                     ans.append(word)
                     
     return ans, t.time() - start
