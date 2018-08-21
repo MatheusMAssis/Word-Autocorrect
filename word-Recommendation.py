@@ -1,6 +1,6 @@
 import time as t
 
-def Recommendation(string):
+def recommendation(string):
     start = t.time()
     
     #--- reading txt common_words_usa.txt (with 10000 words) ---#
@@ -16,7 +16,7 @@ def Recommendation(string):
     ans = [] 
     for i in data:
         if len(string) - len(i) < 2: #--- we optimize by avoid doing Levenshtein for all string ---#
-            value = Levenshtein(string, i)
+            value = levenshtein(string, i)
             if value < 2 and value != 0: #--- it cannot recommend the string itself ---#
                 ans.append(i)
             if len(ans) > 10:
