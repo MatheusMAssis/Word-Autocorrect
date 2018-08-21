@@ -12,5 +12,7 @@ def keyboard_dist(keyboard, letter1, letter2):
             i1, j1 = i, keyboard[i].index(letter1)    #--- coordinates of letter1 ---#
         if letter2 in keyboard[i]:
             i2, j2 = i, keyboard[i].index(letter2)    #--- coordinates of letter2 ---#
-            
+        
+    if abs(i2 - i1) == 1 and abs(j2 - j1) == 1:       #--- if they are diagonal in 1 ---# 
+        return 1 
     return abs(i2 - i1) + abs(j2 - j1)
