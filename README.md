@@ -1,1 +1,3 @@
 # Word-Recommendation
+
+this repository was created to try some algorithms, it won't have any documentation...
